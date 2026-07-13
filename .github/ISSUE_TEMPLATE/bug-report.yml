@@ -1,0 +1,31 @@
+name: Bug 报告
+description: 报告可以复现的代码或文档问题
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: lesson
+    attributes:
+      label: 课程或脚本
+      placeholder: "例如：第 09 课 / mnist_project/09_one_batch_training_step.py"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现步骤
+      description: 请使用仓库相对路径，并删除所有个人信息。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果和脱敏报错
+    validations:
+      required: true

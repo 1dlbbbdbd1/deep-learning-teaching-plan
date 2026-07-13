@@ -1,0 +1,26 @@
+name: 学习问题
+description: 提出课程理解、运行方式或结果方面的问题
+title: "[问题] "
+labels: [question]
+body:
+  - type: input
+    id: lesson
+    attributes:
+      label: 课程编号
+      placeholder: "例如：第 05 课"
+    validations:
+      required: true
+  - type: textarea
+    id: understanding
+    attributes:
+      label: 你目前的理解
+      description: 请用自己的话描述卡住的位置。
+    validations:
+      required: true
+  - type: textarea
+    id: sanitized-output
+    attributes:
+      label: 已脱敏的运行结果
+      description: 删除本机路径、用户名、密钥和个人文件名后再粘贴。
+    validations:
+      required: true

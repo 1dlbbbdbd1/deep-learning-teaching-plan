@@ -1,0 +1,31 @@
+{
+  "topic": "PyTorch MNIST 项目式学习",
+  "progress": 100,
+  "completedLessons": [
+    "00-conda-isolation",
+    "01-pytorch-installation",
+    "02-mnist-data",
+    "03-mnist-visualization",
+    "04-dataloader-batches",
+    "05-minimal-model-forward",
+    "06-loss-function",
+    "07-backpropagation",
+    "08-optimizer-step",
+    "09-one-batch-training-step",
+    "10-mini-training-loop",
+    "11-one-epoch-training",
+    "12-evaluate-test-set",
+    "13-save-trained-model",
+    "14-load-model-and-predict"
+  ],
+  "currentLesson": "mnist-minimal-recognizer-complete",
+  "exercisesCompleted": 15,
+  "notes": [
+    "已完成独立 Python 环境和解释器检查。",
+    "已完成 PyTorch、数据集、DataLoader、模型、损失、梯度和优化器的逐步验证。",
+    "已完成从训练、评估、保存、加载到单张图片预测的 MNIST 闭环。",
+    "当前学习记录中的测试集准确率为 88.62%。",
+    "公开仓库中的环境路径、数据集、模型权重和运行机器信息均由学习者在本地生成，不提交到远端。",
+    "下一阶段进入机器学习基础、MLP、CNN、项目复刻和 Debug 训练。"
+  ]
+}

@@ -1,0 +1,24 @@
+# Local Python environments
+.git-public/
+.venv/
+.conda/
+
+# Python runtime files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE metadata
+.idea/
+.vscode/
+.agents/
+.codex/
+.obsidian/
+
+# Internal planning notes are not part of the public teaching repository
+docs/superpowers/
+
+# Downloaded datasets and generated model weights
+data/
+models/
+outputs/
