@@ -7,9 +7,10 @@
 ## 当前进度
 
 - MNIST 线性模型闭环：已完成
-- 课程：第 00–14 课已完成
+- 课程：第 00–14 课已完成；第 01 和第 02 课之间已补充 PyTorch 常用功能速览；第 15–18 课已写入并配有最小脚本
 - 测试集准确率：当前学习记录为 88.62%
-- 下一阶段：机器学习基础、MLP、CNN、项目复刻与 Debug
+- 当前阶段：机器学习基础
+- 后续阶段：MLP、CNN、项目复刻与 Debug
 
 详细进度见 [`docs/progress.md`](docs/progress.md)。
 
@@ -30,7 +31,7 @@ python -m pip install torch torchvision
 
 ### 2. 按课程顺序学习
 
-从 [`docs/course-index.md`](docs/course-index.md) 开始。每一课都对应一个 `mnist_project/` 下的可运行脚本。
+从 [`docs/course-index.md`](docs/course-index.md) 开始。每一课都对应一个 `mnist_project/` 下的可运行脚本；第 15–18 课是机器学习基础的小脚本，其中第 16–17 课是玩具训练。
 
 ### 3. 下载并检查 MNIST
 
@@ -55,7 +56,7 @@ docs/
   course-index.md                 # 课程索引
   project-overview.md             # MNIST 项目总览
   progress.md                     # 公共学习进度
-  lessons/                        # 第 00–14 课
+  lessons/                        # 第 00–18 课
   roadmap/                        # 十周深度学习路线
   debugging/                      # Debug 工作流与记录模板
 mnist_project/                    # 逐课可运行代码
@@ -70,6 +71,12 @@ tests/                            # 自动验证
 3. 代码、数据和模型都使用仓库相对路径。
 4. 遇到报错时记录现象、最小复现、证据、根因和回归验证。
 5. 分享日志前删除本机路径、用户名、密钥和其他隐私。
+
+## Obsidian 同步约定
+
+本仓库的教程、源码和测试统一维护在当前目录；Obsidian 仍使用独立的 `deep-learning` 学习目录。后续新增教程完成后，会在脱敏并通过测试后同步一份到 Obsidian，不移动或修改原有 Obsidian 笔记和配置。
+
+完整规则见 [`docs/obsidian-sync.md`](docs/obsidian-sync.md)。
 
 ## 参与学习
 

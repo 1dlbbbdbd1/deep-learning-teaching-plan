@@ -1,6 +1,6 @@
 {
-  "topic": "PyTorch MNIST 项目式学习",
-  "progress": 100,
+  "topic": "PyTorch 深度学习循序学习",
+  "progress": 79,
   "completedLessons": [
     "00-conda-isolation",
     "01-pytorch-installation",
@@ -18,14 +18,27 @@
     "13-save-trained-model",
     "14-load-model-and-predict"
   ],
-  "currentLesson": "mnist-minimal-recognizer-complete",
+  "currentLesson": "15-features-labels-train-test",
   "exercisesCompleted": 15,
+  "plannedLessons": [
+    "15-features-labels-train-test",
+    "16-linear-regression",
+    "17-logistic-regression",
+    "18-decision-tree-random-forest"
+  ],
+  "scriptedLessons": [
+    "15-features-labels-train-test",
+    "16-linear-regression",
+    "17-logistic-regression",
+    "18-decision-tree-random-forest"
+  ],
   "notes": [
     "已完成独立 Python 环境和解释器检查。",
     "已完成 PyTorch、数据集、DataLoader、模型、损失、梯度和优化器的逐步验证。",
     "已完成从训练、评估、保存、加载到单张图片预测的 MNIST 闭环。",
     "当前学习记录中的测试集准确率为 88.62%。",
     "公开仓库中的环境路径、数据集、模型权重和运行机器信息均由学习者在本地生成，不提交到远端。",
-    "下一阶段进入机器学习基础、MLP、CNN、项目复刻和 Debug 训练。"
+    "下一阶段进入机器学习基础、MLP、CNN、项目复刻和 Debug 训练。",
+    "已写入第 15-18 课机器学习基础教程，并为每课新增最小可运行脚本；当前学习仍从第 15 课开始。"
   ]
 }

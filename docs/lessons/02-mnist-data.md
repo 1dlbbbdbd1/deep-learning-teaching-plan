@@ -9,6 +9,8 @@
 1. **样本**：一条训练数据。MNIST 里一条样本就是“一张手写数字图片 + 它的数字标签”。
 2. **张量**：PyTorch 处理数据的主要格式。你可以先把它理解成“更适合计算的多维数组”。
 
+如果你看到 `Dataset`、`Tensor`、`shape` 这些词还有点飘，先回去读一遍第 1.5 课：[PyTorch 常用功能速览](01a-pytorch-common-map.md)。那一课就是给这里垫台阶的。
+
 ## MNIST 一张图是什么样
 
 MNIST 的图片是灰度图，所以一张图会变成这个形状：
@@ -52,5 +54,5 @@ MNIST 数据验证通过
 
 - 索引：[课程索引](../course-index.md)
 - 总览：[项目总览](../project-overview.md)
-- 上一课：[第 1 课](01-pytorch-installation.md)
+- 上一课：[第 1.5 课](01a-pytorch-common-map.md)
 - 下一课：[第 3 课](03-mnist-visualization.md)

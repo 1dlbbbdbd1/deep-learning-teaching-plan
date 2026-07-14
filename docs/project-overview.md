@@ -25,9 +25,15 @@
 
 MNIST 闭环完成后，进入 [`roadmap/deep-learning-plan.md`](roadmap/deep-learning-plan.md)，先补齐机器学习和深度学习基础，再练习 MLP、CNN、项目复刻和 Debug，最后拆解最小 ViT。
 
+当前已写入第 15–18 课，主题是特征、标签、训练集、测试集、线性回归、逻辑回归、决策树和随机森林。每课都配有一个最小可运行脚本，其中第 16–17 课包含玩具训练过程。
+
 ## 相关入口
 
 - [课程索引](course-index.md)
 - [第 14 课：加载模型并预测](lessons/14-load-model-and-predict.md)
+- [第 15 课：特征、标签、训练集和测试集](lessons/15-features-labels-train-test.md)
+- [第 16 课：线性回归](lessons/16-linear-regression.md)
+- [第 17 课：逻辑回归](lessons/17-logistic-regression.md)
+- [第 18 课：决策树和随机森林](lessons/18-decision-tree-random-forest.md)
 - [学习进度](progress.md)
 - [Debug 工作流](debugging/debug-workflow.md)

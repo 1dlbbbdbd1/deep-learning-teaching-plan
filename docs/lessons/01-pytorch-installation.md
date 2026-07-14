@@ -62,10 +62,16 @@ PyTorch 验证通过
 - 为什么安装前要先确认终端在 `(.venv)`？
 - `torch.cuda.is_available()` 如果是 `True`，说明了什么？
 
+## 下一步先别急着进数据
+
+如果你还不知道 PyTorch 里常见的 `Tensor`、`Dataset`、`DataLoader`、`nn`、`loss`、`optimizer` 分别干什么，先读第 1.5 课。
+
+第 1.5 课不会要求你写新代码，只是给后面的课程补一张地图。
+
 
 ## 相关链接
 
 - 索引：[课程索引](../course-index.md)
 - 总览：[项目总览](../project-overview.md)
 - 上一课：[第 0 课](00-conda-isolation.md)
-- 下一课：[第 2 课](02-mnist-data.md)
+- 下一课：[第 1.5 课](01a-pytorch-common-map.md)
