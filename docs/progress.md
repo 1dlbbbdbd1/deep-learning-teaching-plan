@@ -26,6 +26,27 @@
 - [ ] 17：逻辑回归
 - [ ] 18：决策树和随机森林
 
+## 已写入：后续完整脚本课
+
+- [ ] 19：Tensor 的 shape、dtype 和 device
+- [ ] 20：Dataset、transform 和 normalization
+- [ ] 21：自己写一个 nn.Module
+- [ ] 22：激活函数为什么有用
+- [ ] 23：MLP 前向传播
+- [ ] 24：训练一个 MNIST MLP
+- [ ] 25：学习率、batch size、epoch 和过拟合
+- [ ] 26：卷积、卷积核和特征图
+- [ ] 27：池化、通道和最小 CNN
+- [ ] 28：训练和评估 MNIST CNN
+- [ ] 29：复刻项目前先读 README、环境和入口
+- [ ] 30：复刻数据流
+- [ ] 31：复刻模型、loss 和训练循环
+- [ ] 32：Debug 工作流实战
+- [ ] 33：常见错误专项训练
+- [ ] 34：ViT 的 patch embedding
+- [ ] 35：ViT 的 Encoder 和分类头
+- [ ] 36：最终复刻报告和 Debug 复盘
+
 ## 当前结果
 
 当前学习记录中，线性模型完成 1 个 epoch 后，在 MNIST 测试集上的准确率为 88.62%。这个数字用于复盘学习过程，不是固定的排行榜成绩；不同设备、随机种子和软件版本可能得到不同结果。
@@ -38,6 +59,8 @@
 2. 将线性模型升级为 MLP，再升级为 CNN。
 3. 练习复刻项目和系统 Debug。
 4. 最后拆解一个最小 ViT。
+
+完整课表见 [`roadmap/full-course-outline.md`](roadmap/full-course-outline.md)。这套课主线编号到第 36 课，加上第 01.5 课，一共 38 篇课程笔记。
 
 ## 如何同步进度
 

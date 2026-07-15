@@ -1,9 +1,10 @@
 {
   "topic": "PyTorch 深度学习循序学习",
-  "progress": 79,
+  "progress": 42,
   "completedLessons": [
     "00-conda-isolation",
     "01-pytorch-installation",
+    "01a-pytorch-common-map",
     "02-mnist-data",
     "03-mnist-visualization",
     "04-dataloader-batches",
@@ -24,13 +25,49 @@
     "15-features-labels-train-test",
     "16-linear-regression",
     "17-logistic-regression",
-    "18-decision-tree-random-forest"
+    "18-decision-tree-random-forest",
+    "19-tensor-shape-dtype-device",
+    "20-dataset-transform-normalization",
+    "21-custom-nn-module",
+    "22-activation-functions",
+    "23-mlp-forward",
+    "24-train-mnist-mlp",
+    "25-hyperparameters-overfitting",
+    "26-convolution-feature-map",
+    "27-pooling-channels-cnn",
+    "28-train-evaluate-cnn",
+    "29-reproduce-project-readme-env-entry",
+    "30-reproduce-data-pipeline",
+    "31-reproduce-model-loss-training-loop",
+    "32-debug-workflow-practice",
+    "33-common-bug-drills",
+    "34-vit-patch-embedding",
+    "35-vit-encoder-classifier",
+    "36-final-reproduction-report"
   ],
   "scriptedLessons": [
     "15-features-labels-train-test",
     "16-linear-regression",
     "17-logistic-regression",
-    "18-decision-tree-random-forest"
+    "18-decision-tree-random-forest",
+    "19-tensor-shape-dtype-device",
+    "20-dataset-transform-normalization",
+    "21-custom-nn-module",
+    "22-activation-functions",
+    "23-mlp-forward",
+    "24-train-mnist-mlp",
+    "25-hyperparameters-overfitting",
+    "26-convolution-feature-map",
+    "27-pooling-channels-cnn",
+    "28-train-evaluate-cnn",
+    "29-reproduce-project-readme-env-entry",
+    "30-reproduce-data-pipeline",
+    "31-reproduce-model-loss-training-loop",
+    "32-debug-workflow-practice",
+    "33-common-bug-drills",
+    "34-vit-patch-embedding",
+    "35-vit-encoder-classifier",
+    "36-final-reproduction-report"
   ],
   "notes": [
     "已完成独立 Python 环境和解释器检查。",
@@ -39,6 +76,7 @@
     "当前学习记录中的测试集准确率为 88.62%。",
     "公开仓库中的环境路径、数据集、模型权重和运行机器信息均由学习者在本地生成，不提交到远端。",
     "下一阶段进入机器学习基础、MLP、CNN、项目复刻和 Debug 训练。",
-    "已写入第 15-18 课机器学习基础教程，并为每课新增最小可运行脚本；当前学习仍从第 15 课开始。"
+    "已写入第 15-18 课机器学习基础教程，并为每课新增最小可运行脚本；当前学习仍从第 15 课开始。",
+    "完整课程已经补齐到第 36 课；主线编号 00-36，加上第 01.5 课，共 38 篇课程笔记。除第 01.5 课是过渡阅读课外，其余课程均配有可运行脚本；第 19-36 课覆盖 MLP、CNN、项目复刻、Debug 和最小 ViT。"
   ]
 }

@@ -7,12 +7,13 @@
 ## 当前进度
 
 - MNIST 线性模型闭环：已完成
-- 课程：第 00–14 课已完成；第 01 和第 02 课之间已补充 PyTorch 常用功能速览；第 15–18 课已写入并配有最小脚本
+- 课程：已规划并写入到第 36 课；编号 00–36，加上 01.5 过渡课，共 38 篇课程笔记
 - 测试集准确率：当前学习记录为 88.62%
 - 当前阶段：机器学习基础
-- 后续阶段：MLP、CNN、项目复刻与 Debug
+- 后续阶段：MLP、CNN、项目复刻、系统 Debug、最小 ViT
 
 详细进度见 [`docs/progress.md`](docs/progress.md)。
+完整课程数量和阶段划分见 [`docs/roadmap/full-course-outline.md`](docs/roadmap/full-course-outline.md)。
 
 ## 快速开始
 
@@ -31,7 +32,7 @@ python -m pip install torch torchvision
 
 ### 2. 按课程顺序学习
 
-从 [`docs/course-index.md`](docs/course-index.md) 开始。每一课都对应一个 `mnist_project/` 下的可运行脚本；第 15–18 课是机器学习基础的小脚本，其中第 16–17 课是玩具训练。
+从 [`docs/course-index.md`](docs/course-index.md) 开始。除第 01.5 课是过渡阅读课外，每一课都对应一个 `mnist_project/` 下的可运行脚本；第 19–36 课也已经补齐脚本和测试。
 
 ### 3. 下载并检查 MNIST
 
@@ -56,7 +57,7 @@ docs/
   course-index.md                 # 课程索引
   project-overview.md             # MNIST 项目总览
   progress.md                     # 公共学习进度
-  lessons/                        # 第 00–18 课
+  lessons/                        # 第 00–36 课，另有第 01.5 课
   roadmap/                        # 十周深度学习路线
   debugging/                      # Debug 工作流与记录模板
 mnist_project/                    # 逐课可运行代码

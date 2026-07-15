@@ -12,6 +12,8 @@ MNIST 最小识别项目已经完成：环境、PyTorch、数据读取、DataLoa
 
 这份计划不重复执行 MNIST 基础课，而是安排 MNIST 之后的系统提升和项目复刻训练。基础课程见 [`../course-index.md`](../course-index.md)。
 
+这条路线已经拆成完整课表：主线编号 00–36，加上 01.5 过渡课，共 38 篇课程笔记。详见 [`full-course-outline.md`](full-course-outline.md)。
+
 ## 二、十周学习路线
 
 ### 阶段 0：基础补齐与 MNIST 复盘｜第 1 周

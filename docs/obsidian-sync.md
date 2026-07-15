@@ -17,7 +17,7 @@
 
 以后新增教程时，按下面顺序处理：
 
-1. 在 `docs/lessons/` 写好公开版教程，同时在 `mnist_project/` 添加对应示例，在 `tests/` 添加最小验证。
+1. 在 `docs/lessons/` 写好公开版教程。除过渡阅读课外，在 `mnist_project/` 添加对应示例脚本，在 `tests/` 添加最小验证。
 2. 在 `docs/course-index.md`、`docs/progress.md` 和需要的项目总览中补上入口。
 3. 完成敏感信息检查，把公开版教程复制一份到 Obsidian 的 `deep-learning/` 目录。
 4. Obsidian 副本可以继续添加个人理解、运行结果和 `[[双向链接]]`；这些内容默认不回写到公开版。
