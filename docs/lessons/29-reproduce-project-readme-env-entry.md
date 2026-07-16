@@ -44,6 +44,95 @@ python .\mnist_project\29_reproduce_project_entry_checklist.py
 - 不改代码，先跑原命令。
 - 记录第一条报错。
 
+## 先把术语翻译成人话
+
+| 词 | 人话解释 | 本课里在哪里出现 |
+| --- | --- | --- |
+| README | 项目的说明书 | `README.md` |
+| entry point | 程序从哪里开始跑 | `train.py`、`main.py` 等 |
+| dependency | 项目依赖的软件包 | `requirements.txt`、安装命令 |
+| checklist | 复刻前检查清单 | `required_entries` |
+
+## 源码逐段讲解
+
+### 1. 找到项目根目录
+
+```python
+project_root = Path(__file__).resolve().parents[1]
+```
+
+这行的意思是：从当前脚本位置往上找一级，得到项目根目录。
+
+以后不要把本机绝对路径写死在脚本里。项目路径应该尽量从当前文件推出来。
+
+### 2. 列出必须存在的入口
+
+```python
+required_entries = [
+    project_root / "README.md",
+    project_root / "docs" / "course-index.md",
+    project_root / "mnist_project",
+    project_root / "tests",
+]
+```
+
+这份清单不是“训练模型”，而是“复刻前先确认项目骨架完整”。
+
+### 3. 逐个检查
+
+```python
+for entry in required_entries:
+    print(f"检查入口：{entry.relative_to(project_root)} -> {entry.exists()}")
+```
+
+`entry.exists()` 会返回 `True` 或 `False`。
+
+`relative_to(project_root)` 让输出更干净，不暴露你的本机绝对路径。
+
+### 4. 缺东西就立刻停
+
+```python
+if not entry.exists():
+    raise RuntimeError(...)
+```
+
+复刻项目时，缺 README、缺源码目录、缺测试目录，都不应该继续硬猜。
+
+## 输出怎么读
+
+- `检查入口：README.md -> True`：README 存在。
+- `检查入口：docs/course-index.md -> True`：课程索引存在。
+- `检查入口：mnist_project -> True`：源码目录存在。
+- `检查入口：tests -> True`：测试目录存在。
+
+如果某一项是 `False`，先补齐或确认项目结构，而不是继续乱跑命令。
+
+## 你真正学到了什么
+
+复刻项目第一步不是写代码，而是建立项目地图：
+
+```text
+说明书在哪里？
+依赖怎么装？
+训练从哪里进？
+评估从哪里进？
+测试怎么跑？
+```
+
+没有地图就开始改代码，很容易把问题越改越大。
+
+## 你可以自己改一改
+
+把清单里临时加一项：
+
+```python
+project_root / "not_exist.py"
+```
+
+再运行脚本。它会报错，告诉你缺少入口。
+
+这个实验想让你练习：让脚本帮你发现项目结构问题，而不是靠眼睛猜。
+
 ## Debug 检查
 
 如果第一步就报错，先判断是环境问题、路径问题、依赖问题，还是数据缺失。

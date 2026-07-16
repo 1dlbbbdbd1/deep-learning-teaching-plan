@@ -105,6 +105,110 @@ python .\mnist_project\18_decision_tree_random_forest.py
 
 这个脚本不依赖 scikit-learn，只用纯 Python 演示“单棵树按规则判断”和“多棵树投票”。它是概念演示，不是完整树模型库。
 
+## 源码逐段讲解
+
+### 1. 定义一条树规则
+
+```python
+@dataclass(frozen=True)
+class ThresholdRule:
+    feature_name: str
+    feature_index: int
+    threshold: float
+    left_label: int
+    right_label: int
+```
+
+这不是完整决策树库，只是一条“阈值规则”。
+
+可以读成：
+
+```text
+看某个特征，如果它大于等于阈值，就预测右边类别，否则预测左边类别
+```
+
+### 2. 用规则做预测
+
+```python
+def predict(self, sample):
+    if sample[self.feature_index] >= self.threshold:
+        return self.right_label
+    return self.left_label
+```
+
+比如 `feature_index=0` 表示看样本里的第 1 个特征。
+
+`threshold=0.5` 表示用 `0.5` 当分界线。
+
+### 3. 写一个投票函数
+
+```python
+def majority_vote(predictions):
+    ones = sum(predictions)
+    zeros = len(predictions) - ones
+```
+
+这里假设预测结果只有 `0` 和 `1`。
+
+`sum(predictions)` 就能数出有几棵树投了 `1`。
+
+### 4. 准备一个样本
+
+```python
+sample = [0.8, 0.6, 1.0]
+```
+
+这三个数字分别代表：
+
+```text
+亮度、圆润程度、笔画像素数
+```
+
+它们是人为起的名字，不是真实 MNIST 特征。目的是让你看懂树模型“按条件判断”的感觉。
+
+### 5. 多棵树一起投票
+
+```python
+forest_votes = [tree.predict(sample) for tree in forest]
+forest_prediction = majority_vote(forest_votes)
+```
+
+`forest_votes` 是每棵树自己的意见。
+
+`forest_prediction` 是最终投票结果。
+
+## 输出怎么读
+
+- `样本特征`：当前要判断的输入。
+- `单棵决策树规则`：只用一条条件做判断。
+- `单棵决策树预测`：单棵树给出的结果。
+- `投票明细：[1, 1, 0]`：三棵树里两棵投 1，一棵投 0。
+- `随机森林投票结果：1`：少数服从多数。
+
+## 你真正学到了什么
+
+树模型和神经网络的思路很不一样：
+
+```text
+神经网络：用 loss 和梯度慢慢改参数
+树模型：用条件判断把样本分到不同分支
+随机森林：让很多棵树投票
+```
+
+这节不是让你掌握工业级随机森林，而是让你知道“不是所有机器学习模型都长得像神经网络”。
+
+## 你可以自己改一改
+
+把样本改成：
+
+```python
+sample = [0.2, 0.6, 1.0]
+```
+
+再运行脚本。你会看到第一棵树的预测可能变了，因为亮度低于 `0.5`。
+
+如果脚本最后的检查失败，说明你改变了输入后，原来的预期输出也要一起改。这和真实项目里的测试维护是同一个道理。
+
 ## 本节小练习
 
 不写代码，先用自己的话回答：

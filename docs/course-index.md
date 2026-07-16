@@ -53,3 +53,4 @@
 - [完整课程大纲](roadmap/full-course-outline.md)
 - [Debug 工作流](debugging/debug-workflow.md)
 - [Obsidian 同步约定](obsidian-sync.md)
+- [零基础课程写作标准](teaching-style-guide.md)

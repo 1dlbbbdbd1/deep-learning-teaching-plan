@@ -45,6 +45,109 @@ python .\mnist_project\31_reproduce_model_loss_training_loop.py
 - 跑 1 个 epoch。
 - 评估一次。
 
+## 先把术语翻译成人话
+
+| 词 | 人话解释 | 本课里在哪里出现 |
+| --- | --- | --- |
+| training loop | 训练循环，反复做预测、算错、改参数 | `for _ in range(10)` |
+| logits | 分类分数 | `logits = model(features)` |
+| parameter update | 参数真的被改了 | `changed` |
+| reproduction | 复刻，先做最小可运行版本 | 本课目标 |
+
+## 源码逐段讲解
+
+### 1. 准备一个 XOR 风格的小分类任务
+
+```python
+features = torch.tensor(
+    [
+        [0.0, 0.0],
+        [0.0, 1.0],
+        [1.0, 0.0],
+        [1.0, 1.0],
+    ]
+)
+labels = torch.tensor([0, 1, 1, 0], dtype=torch.long)
+```
+
+每条样本有 2 个特征，标签是 0 或 1。
+
+这不是 MNIST，只是一个小到能看懂的训练闭环。
+
+### 2. 定义最小模型
+
+```python
+model = nn.Sequential(nn.Linear(2, 8), nn.ReLU(), nn.Linear(8, 2))
+```
+
+输入 2 个特征，输出 2 个类别分数。
+
+中间加 `ReLU`，让模型能处理比直线更复杂的分类边界。
+
+### 3. 训练前复制参数
+
+```python
+before = model[0].weight.detach().clone()
+```
+
+这行保存训练前第一层权重。后面训练完再比较，确认参数真的变了。
+
+### 4. 跑 10 次训练步骤
+
+```python
+for _ in range(10):
+    logits = model(features)
+    loss = loss_function(logits, labels)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+```
+
+这就是复刻训练循环时要找的核心骨架：
+
+```text
+forward -> loss -> zero_grad -> backward -> step
+```
+
+### 5. 检查参数是否更新
+
+```python
+changed = not torch.equal(before, after)
+```
+
+只看 loss 有时不够。确认参数变化，能帮你排除“忘了 step”这种错误。
+
+## 输出怎么读
+
+- `logits shape：[4, 2]`：4 条样本，每条输出 2 个类别分数。
+- `最终 loss`：训练结束时的错误程度。
+- `参数是否更新：True`：优化器确实改了模型参数。
+
+## 你真正学到了什么
+
+复刻别人的训练代码时，不要一次搬完整项目。先用最小数据验证四件事：
+
+```text
+模型能 forward 吗？
+loss 能算吗？
+梯度能产生吗？
+参数会更新吗？
+```
+
+这四件事通过了，再扩大到真实数据和完整 epoch。
+
+## 你可以自己改一改
+
+把：
+
+```python
+optimizer.step()
+```
+
+临时注释掉，再运行脚本。你会看到 `参数是否更新` 变成 `False` 或检查失败。
+
+这个实验是复刻项目时的救命动作：loss 不动时，先确认参数到底有没有更新。
+
 ## Debug 检查
 
 如果 loss 不变，检查是否忘了 `zero_grad()`、`backward()` 或 `optimizer.step()`。

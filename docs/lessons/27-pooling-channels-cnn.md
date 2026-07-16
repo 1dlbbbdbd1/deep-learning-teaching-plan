@@ -42,6 +42,105 @@ python .\mnist_project\27_pooling_channels_cnn.py
 - 打印每层输出 shape。
 - 计算 Flatten 后应该接多少输入特征。
 
+## 先把术语翻译成人话
+
+| 词 | 人话解释 | 本课里在哪里出现 |
+| --- | --- | --- |
+| pooling | 缩小特征图，保留主要信息 | `nn.MaxPool2d(2)` |
+| channel | 特征图数量 | `nn.Conv2d(1, 4, ...)` |
+| Flatten | 把多维特征图摊平成一行 | `nn.Flatten()` |
+| logits | 最终 10 类分数 | `logits` |
+
+## 源码逐段讲解
+
+### 1. 定义最小 CNN
+
+```python
+model = nn.Sequential(
+    nn.Conv2d(1, 4, kernel_size=3),
+    nn.ReLU(),
+    nn.MaxPool2d(kernel_size=2),
+    nn.Flatten(),
+    nn.Linear(4 * 13 * 13, 10),
+)
+```
+
+这条链路是：
+
+```text
+卷积 -> 激活 -> 池化 -> 展平 -> 分类
+```
+
+### 2. 为什么 Linear 是 `4 * 13 * 13`
+
+输入图片是 28x28。
+
+卷积核 3x3、不补边：
+
+```text
+28 - 3 + 1 = 26
+```
+
+池化 `kernel_size=2` 会把 26x26 缩成 13x13。
+
+卷积输出 4 个通道，所以展平后是：
+
+```text
+4 * 13 * 13
+```
+
+### 3. 造两张随机图片
+
+```python
+images = torch.randn(2, 1, 28, 28)
+```
+
+shape 是 `[2, 1, 28, 28]`，表示 2 张 MNIST 格式图片。
+
+### 4. 得到 logits
+
+```python
+logits = model(images)
+```
+
+输出应该是 `[2, 10]`：2 张图，每张图 10 个类别分数。
+
+## 输出怎么读
+
+- `输入图片 shape：[2, 1, 28, 28]`：2 张灰度图。
+- `模型结构`：从卷积到分类的顺序。
+- `输出 logits shape：[2, 10]`：最终能接分类 loss。
+
+## 你真正学到了什么
+
+CNN 最容易卡在 `Flatten -> Linear` 这里。
+
+以后看到这种错误：
+
+```text
+mat1 and mat2 shapes cannot be multiplied
+```
+
+第一反应应该是：Flatten 后的大小和 Linear 的输入大小不一致。
+
+## 你可以自己改一改
+
+把：
+
+```python
+nn.Conv2d(1, 4, kernel_size=3)
+nn.Linear(4 * 13 * 13, 10)
+```
+
+临时改成：
+
+```python
+nn.Conv2d(1, 8, kernel_size=3)
+nn.Linear(8 * 13 * 13, 10)
+```
+
+再运行脚本。输出仍然应该是 `[2, 10]`，只是通道数变多了。
+
 ## Debug 检查
 
 如果 Linear 报矩阵乘法 shape 错误，通常是 Flatten 后的大小算错了。
