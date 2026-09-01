@@ -19,7 +19,7 @@ if not model_path.exists():
 test_data = datasets.MNIST(
     root=data_dir,
     train=False,
-    download=False,
+    download=True,
     transform=transforms.ToTensor(),
 )
 

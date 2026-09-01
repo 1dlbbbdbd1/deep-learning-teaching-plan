@@ -49,7 +49,7 @@ python .\mnist_project\02_inspect_mnist_data.py
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-部分测试需要先下载 MNIST 数据，完整训练测试也可能需要较长时间。
+首次运行会自动下载 MNIST 数据，之后复用本地缓存；完整训练测试可能需要较长时间。2026-09-01 审查已修复测试顺序依赖：每个使用 MNIST 的课程脚本都能在数据缺失时自行下载，不再要求先手动运行第 02 课。
 
 ## 仓库结构
 

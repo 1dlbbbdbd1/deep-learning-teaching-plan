@@ -12,7 +12,7 @@ data_dir = project_root / "data"
 train_data = datasets.MNIST(
     root=data_dir,
     train=True,
-    download=False,
+    download=True,
     transform=transforms.ToTensor(),
 )
 

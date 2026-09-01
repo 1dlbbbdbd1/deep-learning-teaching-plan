@@ -11,7 +11,7 @@ output_dir.mkdir(exist_ok=True)
 train_data = datasets.MNIST(
     root=data_dir,
     train=True,
-    download=False,
+    download=True,
 )
 
 image, label = train_data[0]
